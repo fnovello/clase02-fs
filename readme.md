@@ -11,6 +11,8 @@ La idea de la tarea, es que implementen funciones de JSON (parse, stringify), co
 Desde el index.js, se encuentra urls con los nombres ["add","remove","get"], a modo de ejemplo se detalla como agregar un objeto (add).
     -Realizar el remove y el get.
 
+Devolver un json como respuesta, si fue satisfctorio o no el resultado de las operaciones, en el caso del get devolver el objeto a la pantalla
+
 ## Tarea 2 
 
 La idea de esta tarea es que se practique el uso de promesas, async / await

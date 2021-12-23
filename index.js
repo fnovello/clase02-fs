@@ -3,8 +3,11 @@ const readWrite = require('./moduloReadWrite/readWriteData');
 const port = 3000;
 
 const server = http.createServer((req,res) => {
-    res.statusCode = 200;
     
+    
+    res.statusCode = 200;
+    res.setHeader("Content-type",'application/json');
+
     console.log('req.url: ', req.url);
     console.log('req.met: ', req.method);
 
