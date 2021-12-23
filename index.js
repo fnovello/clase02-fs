@@ -2,18 +2,17 @@ const http = require('http');
 const readWrite = require('./moduloReadWrite/readWriteData');
 const port = 3000;
 
-const server = http.createServer( (req,res) => {
+const server = http.createServer((req,res) => {
     res.statusCode = 200;
     
     console.log('req.url: ', req.url);
     console.log('req.met: ', req.method);
 
     if(req.url == '/add'){
-        //agregue objeto
+        //Agregar un post 
         
         let array_posts = JSON.parse(readWrite.getData());
-        console.log('array_posts: ', array_posts);
-        
+
         let post =  {
             "userId": 1,
             "id": 6,
@@ -22,20 +21,29 @@ const server = http.createServer( (req,res) => {
           };
 
         array_posts.push(post);
+
         readWrite.setData(JSON.stringify(array_posts))
+
         res.write('add');
         res.end();
         return;
         
     }
+
     if(req.url == '/remove'){
-        //remove objeto
+        //Remove post 
         res.write('remove');
         res.end();
         return;
     }
+    
+    if(req.url == '/get'){
+        //Retonar un post por su id 
+        res.write('getPost');
+        res.end();
+        return;
+    }
 })
-
 
 server.listen(port,'localhost',() => {
     console.log("estoy escuchando en el puerto " + port);
