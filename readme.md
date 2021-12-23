@@ -23,5 +23,6 @@ Usar una promesa para devolver los datos y consumirla desde index.js
 
 - Ejecutar index.js
 ```
+npm i 
 npm run dev
 ```
